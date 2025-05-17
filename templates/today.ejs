@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta charset="UTF-8">
+        <title>Today's Schedule</title>
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+        <%- include('header') %>
+        <h1>Today's Schedule (<%= today %>)</h1>
+        
+        <% if (tasks && tasks.length > 0) { %>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Task</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% tasks.forEach(task => { %>
+                        <tr>
+                            <td><%= task.time || 'No time' %></td>
+                            <td><%= task.task %></td>
+                            <td><%= task.description %></td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        <% } else { %>
+            <p>No tasks today.</p>
+        <% } %>
+
+        <h2>Today's Weather:</h2>
+        <p><%= weather.weather_descriptions[0] %></p>
+        <p>Temperature: <%= weather.temperature %>°C</p>
+        <p>Humidity: <%= weather.humidity %>%</p>
+        <p>Wind Speed: <%= weather.wind_speed %> km/h</p>
+        
+        <p><a href="/edit">Add New Task</a></p>
+    </body>
+</html>

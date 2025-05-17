@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Schedule Landing Page</title>
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+        <%- include('header') %>
+        <h2>Start your days right!</h2>
+        <p>Follow a routine and get back on track!</p>
+        <p>The purpose of this application is to help students keep a steady weekly schedule and to be prepared for the day.</p>
+        <p>This is not a calander but rather a tool to track daily goals/tasks that you want to incorporate into your routine.</p>
+        <p>Add an entry, view your daily schedule, see and modify your week.</p>
+        <h2>Features:</h2>
+        <a href ="/edit">Add Entry</a><br>
+        <a href ="/today">Today's Schedule</a><br>
+        <a href ="/weekly">Edit Weekly Schedule</a>
+        <h2>Clear All Entries:</h2>
+        <form action = "/clear" method = "post">
+            <button type="submit">Clear All Entries</button>
+        </form>
+    </body>
+</html>

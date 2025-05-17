@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Weather</title>
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+        <%- include('header') %>
+        <h2>Today's Weather:</h2>
+        <p><%= weather.weather_descriptions[0] %></p>
+        <p>Temperature: <%= weather.temperature %>°C</p>
+        <p>Humidity: <%= weather.humidity %>%</p>
+        <p>Wind Speed: <%= weather.wind_speed %> km/h</p>
+    </body>
+</html>

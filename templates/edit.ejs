@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Edit Entry</title>
+        <link rel="stylesheet" href="/style.css">
+
+    </head>
+    <body>
+        <%- include('header') %>
+        <h1>Edit Entry</h1>
+        <fieldset>
+            <legend>New Task/Goal</legend>
+            <form action="/edit" method="post">
+                <label for="task">Task:</label>
+                <input type="text" id="task" name="task" required><br><br>
+                <label for="description">Description:</label>
+                <input type="text" id="description" name="description"><br><br>
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time"> (if applicable)<br><br>
+                <label for="day">Choose a day of the week:</label>
+                <select id="day" name="days[]" multiple size = "7" required>
+                    <option value="Sunday">Sunday</option>
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                    <option value="Saturday">Saturday</option>
+                </select><br><br>
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </form>
+        </fieldset>

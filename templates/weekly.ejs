@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Weekly Schedule</title>
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+        <%- include('header') %>
+        <h1>Weekly Schedule</h1>
+        
+        <table border=1 width="100%">
+            <tr>
+                <th>Sunday</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+            </tr>
+            <tr>
+                <% days.forEach(day => { %>
+                    <td>
+                        <% const dayTasks = tasks.filter(task => 
+                            Array.isArray(task.days) && task.days.includes(day)); %>
+                        <% if (dayTasks.length > 0) { %>
+                                <% dayTasks.forEach(task => { %>
+                                        <form action="/delete" method="post">
+                                            <strong><u><%= task.task %></u> (<%= task.time || 'No time' %>): </strong> 
+                                            <br><%= task.description %>
+                                            <input type="hidden" name="taskName" value="<%= task.task %>">
+                                            <input type="hidden" name="taskDesc" value="<%= task.description %>"><br>
+                                            <button style="background-color: lightblue;" type="submit">Delete</button>
+                                        </form>
+                                        <hr>
+                                <% }); %>
+                        <% } else { %>
+                            <p>No tasks on <%= day %></p>
+                        <% } %>
+                    </td>
+                <% }); %>
+            </tr>
+        </table>
+        <p><a href="/edit">Add New Task</a></p>
+    </body>
+</html>

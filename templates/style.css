@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Ancizar+Sans:ital,wght@0,100..1000;1,100..1000&family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&display=swap');
+
+
+body{
+    color: #1F2937;
+    font-size: 16px;
+    background-color: #F9FAFB;
+    font-family: "Ancizar Sans", sans-serif;
+
+}
+
+h1,h2,h3,h4,h5,h6{
+    color: black;
+}
+
+table {
+    border-color: #FACC15;
+    border-width: 2px;
+}
+
+tr{
+    border-color: #F87171;
+    border-width: 2px;
+    background-color: #FACC15;
+}
+
+th{
+    background-color: coral;
+}
+
+input{
+    background-color:#FACC15;
+}
+
